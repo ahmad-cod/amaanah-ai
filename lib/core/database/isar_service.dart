@@ -1,7 +1,7 @@
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-import '../../features/shipments/data/datasources/db/schemas/shipment_schema.dart';
-import '../../features/inventory/data/datasources/db/schemas/inventory_schema.dart';
+import '../../../features/shipments/data/datasources/db/schemas/shipment_schema.dart';
+import '../../../features/inventory/data/datasources/db/schemas/inventory_schema.dart';
 
 class IsarService {
   static Future<Isar> init() async {

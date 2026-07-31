@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar/isar.dart';
 import 'app.dart';
-import 'core/database/isar_provider.dart';
-import 'core/database/isar_service.dart';
-import 'features/inventory/data/datasources/db/schemas/inventory_schema.dart';
-import 'features/shipments/data/datasources/db/schemas/shipment_schema.dart';
+import 'lib/core/database/isar_provider.dart';
+import 'lib/core/database/isar_service.dart';
+import 'lib/features/inventory/data/datasources/db/schemas/inventory_schema.dart';
+import 'lib/features/shipments/data/datasources/db/schemas/shipment_schema.dart';
 
 void main() async {
   // Ensure Flutter engine bindings are initialized
