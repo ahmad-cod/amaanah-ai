@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/app_colors.dart';
-import '../../domain/entities/shipment.dart';
+import 'package:amaanah/core/constants/app_colors.dart';
+import 'package:amaanah/features/shipments/domain/entities/shipment.dart';
 
 class AnalysisResultData {
   final String trackingNumber;

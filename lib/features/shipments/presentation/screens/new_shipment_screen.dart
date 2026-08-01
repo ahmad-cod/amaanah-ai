@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/app_strings.dart';
-import '../../../../shared/widgets/app_button.dart';
-import '../../../../shared/widgets/custom_app_bar.dart';
-import '../../domain/entities/shipment.dart';
-import '../providers/shipment_provider.dart';
-import '../widgets/analysis_result_card.dart';
-import '../widgets/conversation_widget.dart';
-import '../widgets/image_attachment_widget.dart';
+import 'package:amaanah/core/constants/app_colors.dart';
+import 'package:amaanah/core/constants/app_strings.dart';
+import 'package:amaanah/features/shipments/domain/entities/shipment.dart';
+import 'package:amaanah/features/shipments/presentation/providers/shipment_provider.dart';
+import 'package:amaanah/features/shipments/presentation/widgets/analysis_result_card.dart';
+import 'package:amaanah/features/shipments/presentation/widgets/conversation_widget.dart';
+import 'package:amaanah/features/shipments/presentation/widgets/image_attachment_widget.dart';
+import 'package:amaanah/shared/widgets/app_button.dart';
+import 'package:amaanah/shared/widgets/custom_app_bar.dart';
 
 class NewShipmentScreen extends ConsumerStatefulWidget {
   const NewShipmentScreen({super.key});
