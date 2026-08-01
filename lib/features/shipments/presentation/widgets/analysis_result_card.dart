@@ -61,7 +61,8 @@ class AnalysisResultCard extends StatelessWidget {
                         color: AppColors.primary.withOpacity(0.15),
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(Icons.auto_awesome, color: AppColors.primary, size: 20),
+                      child: const Icon(Icons.auto_awesome,
+                          color: AppColors.primary, size: 20),
                     ),
                     const SizedBox(width: 10),
                     Column(
@@ -69,21 +70,25 @@ class AnalysisResultCard extends StatelessWidget {
                       children: [
                         Text(
                           'Analysis Extracted',
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.primary,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.primary,
+                                  ),
                         ),
                         Text(
                           'On-Device Gemma Model • ${(result.confidenceScore * 100).toStringAsFixed(0)}% Confidence',
-                          style: const TextStyle(fontSize: 11, color: AppColors.textSecondaryLight),
+                          style: const TextStyle(
+                              fontSize: 11,
+                              color: AppColors.textSecondaryLight),
                         ),
                       ],
                     ),
                   ],
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
                     color: AppColors.success.withOpacity(0.15),
                     borderRadius: BorderRadius.circular(12),
@@ -106,22 +111,34 @@ class AnalysisResultCard extends StatelessWidget {
             // Extracted Info Grid
             Row(
               children: [
-                Expanded(child: _buildInfoCell(context, 'Origin', result.origin, Icons.location_on_outlined)),
-                Expanded(child: _buildInfoCell(context, 'Destination', result.destination, Icons.flag_outlined)),
+                Expanded(
+                    child: _buildInfoCell(context, 'Origin', result.origin,
+                        Icons.location_on_outlined)),
+                Expanded(
+                    child: _buildInfoCell(context, 'Destination',
+                        result.destination, Icons.flag_outlined)),
               ],
             ),
             const SizedBox(height: 12),
             Row(
               children: [
-                Expanded(child: _buildInfoCell(context, 'Sender', result.sender, Icons.person_outline)),
-                Expanded(child: _buildInfoCell(context, 'Recipient', result.recipient, Icons.person)),
+                Expanded(
+                    child: _buildInfoCell(context, 'Sender', result.sender,
+                        Icons.person_outline)),
+                Expanded(
+                    child: _buildInfoCell(
+                        context, 'Recipient', result.recipient, Icons.person)),
               ],
             ),
             const SizedBox(height: 12),
             Row(
               children: [
-                Expanded(child: _buildInfoCell(context, 'Package Type', result.packageType, Icons.inventory_2_outlined)),
-                Expanded(child: _buildInfoCell(context, 'Weight Est.', result.estimatedWeight, Icons.scale_outlined)),
+                Expanded(
+                    child: _buildInfoCell(context, 'Package Type',
+                        result.packageType, Icons.inventory_2_outlined)),
+                Expanded(
+                    child: _buildInfoCell(context, 'Weight Est.',
+                        result.estimatedWeight, Icons.scale_outlined)),
               ],
             ),
 
@@ -138,7 +155,8 @@ class AnalysisResultCard extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(Icons.lightbulb_outline, color: AppColors.accent, size: 18),
+                  const Icon(Icons.lightbulb_outline,
+                      color: AppColors.accent, size: 18),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
@@ -166,7 +184,8 @@ class AnalysisResultCard extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoCell(BuildContext context, String label, String value, IconData icon) {
+  Widget _buildInfoCell(
+      BuildContext context, String label, String value, IconData icon) {
     return Row(
       children: [
         Icon(icon, size: 16, color: AppColors.textSecondaryLight),
@@ -177,11 +196,13 @@ class AnalysisResultCard extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: const TextStyle(fontSize: 11, color: AppColors.textSecondaryLight),
+                style: const TextStyle(
+                    fontSize: 11, color: AppColors.textSecondaryLight),
               ),
               Text(
                 value,
-                style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                style:
+                    const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),

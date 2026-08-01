@@ -12,7 +12,7 @@ class MainScaffold extends StatelessWidget {
   });
 
   int _calculateSelectedIndex(BuildContext context) {
-    final location = GoRouterState.of(context).uri.pathname;
+    final location = GoRouterState.of(context).uri.path;
     if (location.startsWith(Routes.shipments)) {
       return 1;
     }

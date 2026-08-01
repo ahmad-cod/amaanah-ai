@@ -21,7 +21,7 @@ class NewShipmentScreen extends ConsumerStatefulWidget {
 class _NewShipmentScreenState extends ConsumerState<NewShipmentScreen> {
   final TextEditingController _chatController = TextEditingController();
   final List<ConversationMessage> _messages = [];
-  
+
   String? _attachedImageName;
   bool _isAnalyzing = false;
   AnalysisResultData? _analysisResult;
@@ -67,10 +67,13 @@ class _NewShipmentScreenState extends ConsumerState<NewShipmentScreen> {
   }
 
   void _performAnalyze() async {
-    if (_messages.isEmpty && _attachedImageName == null && _chatController.text.trim().isEmpty) {
+    if (_messages.isEmpty &&
+        _attachedImageName == null &&
+        _chatController.text.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Please enter conversation instructions or attach an image first.'),
+          content: Text(
+              'Please enter conversation instructions or attach an image first.'),
         ),
       );
       return;
@@ -89,16 +92,19 @@ class _NewShipmentScreenState extends ConsumerState<NewShipmentScreen> {
     // Simulate analysis processing pipeline
     await Future.delayed(const Duration(milliseconds: 1400));
 
-    final rawInput = _messages.isNotEmpty ? _messages.last.text : 'Industrial Parts Freight';
+    final rawInput =
+        _messages.isNotEmpty ? _messages.last.text : 'Industrial Parts Freight';
     final isElectronics = rawInput.toLowerCase().contains('electronics');
     final isMedical = rawInput.toLowerCase().contains('medical');
 
     setState(() {
       _isAnalyzing = false;
       _analysisResult = AnalysisResultData(
-        trackingNumber: 'AMN-${(100000 + (DateTime.now().millisecondsSinceEpoch % 899999))}',
+        trackingNumber:
+            'AMN-${(100000 + (DateTime.now().millisecondsSinceEpoch % 899999))}',
         sender: 'Atlas Logistics Hub',
-        recipient: isMedical ? 'Abuja Specialist Clinic' : 'Kano Central Warehouse',
+        recipient:
+            isMedical ? 'Abuja Specialist Clinic' : 'Kano Central Warehouse',
         origin: 'Dock 4, Lagos Port',
         destination: isMedical ? 'Abuja Capital Zone' : 'Kano Industrial Zone',
         packageType: isElectronics
@@ -131,14 +137,16 @@ class _NewShipmentScreenState extends ConsumerState<NewShipmentScreen> {
       notes: 'Extracted from conversation & cargo image.',
     );
 
-    final success = await ref.read(shipmentsProvider.notifier).addShipment(shipment);
+    final success =
+        await ref.read(shipmentsProvider.notifier).addShipment(shipment);
 
     if (mounted) {
       if (success) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: AppColors.success,
-            content: Text('Shipment ${_analysisResult!.trackingNumber} saved to offline database!'),
+            content: Text(
+                'Shipment ${_analysisResult!.trackingNumber} saved to offline database!'),
           ),
         );
         setState(() {
@@ -190,14 +198,17 @@ class _NewShipmentScreenState extends ConsumerState<NewShipmentScreen> {
                   ? const SizedBox(
                       width: 18,
                       height: 18,
-                      child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                      child: CircularProgressIndicator(
+                          strokeWidth: 2, color: Colors.white),
                     )
                   : const Icon(Icons.analytics_outlined),
-              label: Text(_isAnalyzing ? 'Analyzing Inputs...' : 'Analyze Shipment'),
+              label: Text(
+                  _isAnalyzing ? 'Analyzing Inputs...' : 'Analyze Shipment'),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size.fromHeight(52),
                 backgroundColor: AppColors.primary,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14)),
               ),
             ),
             const SizedBox(height: 24),
