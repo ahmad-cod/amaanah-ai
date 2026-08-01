@@ -22,7 +22,6 @@ abstract class AppTheme {
         backgroundColor: AppColors.surfaceLight,
         elevation: 0,
         centerTitle: false,
-        scaffoldColorScheme: ColorScheme.light(),
         iconTheme: IconThemeData(color: AppColors.textPrimaryLight),
         titleTextStyle: TextStyle(
           color: AppColors.textPrimaryLight,
@@ -30,7 +29,7 @@ abstract class AppTheme {
           fontWeight: FontWeight.w700,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.cardLight,
         elevation: 1,
         shape: RoundedRectangleBorder(
@@ -92,7 +91,7 @@ abstract class AppTheme {
           fontWeight: FontWeight.w700,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.cardDark,
         elevation: 2,
         shape: RoundedRectangleBorder(
