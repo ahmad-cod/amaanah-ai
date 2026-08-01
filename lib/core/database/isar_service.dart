@@ -6,7 +6,7 @@ import 'package:amaanah/features/shipments/data/datasources/db/schemas/shipment_
 class IsarService {
   static Future<Isar> init() async {
     final dir = await getApplicationDocumentsDirectory();
-    
+
     if (Isar.instanceNames.contains('amaanah_db')) {
       return Isar.getInstance('amaanah_db')!;
     }
