@@ -1,6 +1,5 @@
 import '../../features/shipments/domain/models/conversation_analysis.dart';
 import '../../features/shipments/domain/models/image_analysis.dart';
-import '../../features/shipments/domain/models/recommendation.dart';
 import '../../features/shipments/domain/models/risk_assessment.dart';
 import '../../features/shipments/domain/models/shipment.dart';
 import '../../features/shipments/domain/models/shipment_summary.dart';

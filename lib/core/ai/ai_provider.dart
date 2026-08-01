@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'ai_engine.dart';
+import 'gemma_engine.dart';
 
-/// Riverpod provider for the abstract AIEngine contract.
-/// Concrete implementations (e.g. GemmaAIEngine or MockAIEngine) override this provider.
+/// Riverpod provider for the on-device Gemma AI Engine.
 final aiEngineProvider = Provider<AIEngine>((ref) {
-  throw UnimplementedError('aiEngineProvider must be implemented or overridden');
+  return GemmaEngine();
 });
